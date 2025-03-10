@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O vulto! - História Interativa</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+
+        body {
+            background: url('fundo.webp') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            width: 80%;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            color: #f1c40f;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+            font-size: 18px;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+
+        button {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border: 2px solid #f1c40f;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            button {
+                width: 90%;
+                font-size: 16px;
+            }
+
+            img {
+                max-width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="choicesContainer" class="container">
+    <h1>O vulto!</h1>
+    <p>Você está em casa e recebe um telefonema.</p>
+    <img src="telefone.gif" alt="Telefone tocando">
+    <br>
+    <button onclick="escolha1()">Você decide ignorar a ligação e vai para a cozinha!</button>
+    <button onclick="escolha2()">Atende o telefone!</button>
+</div>
+
+<script>
+    function adicionarEscolha(html) {
+      
+        document.getElementById('choicesContainer').innerHTML = html;
+    }
+
+    function adicionarEscolha(html) {
+    document.getElementById('choicesContainer').innerHTML = html;
+}
+
+function escolha1() {
+    var html = `
+        <div class="container">
+            <p>Você decide ignorar a ligação e vai para a cozinha!</p>
+            <img src="cozinha.webp" alt="Cozinha">
+            <button onclick="escolha4()">Continua na cozinha</button>
+            <button onclick="escolha5()">Volta para a sala</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha2() {
+    var html = `
+        <div class="container">
+            <p>Você decide atender o telefone, e está prestes a receber uma notícia triste!</p>
+            <img src="a.gif" alt="Telefone tocando">
+            <button onclick="escolha6()">Começa a chorar e sai desesperada</button>
+            <button onclick="escolha7()">Começa a chorar e tenta manter a calma</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha4() {
+    var html = `
+        <div class="container">
+            <p>Você está na cozinha, mas começa a ouvir barulhos estranhos na casa.</p>
+            <img src="cozinha.webp" alt="Cozinha">
+            <button onclick="escolha8()">Investiga os barulhos</button>
+            <button onclick="escolha9()">Ignora e continua fazendo algo na cozinha</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha5() {
+    var html = `
+        <div class="container">
+            <p>Você volta para a sala, mas o telefone ainda está tocando insistentemente!</p>
+            <img src="sala.webp" alt="sala">
+            <button onclick="escolha10()">Atende o telefone novamente</button>
+            <button onclick="escolha11()">Desliga o telefone e tenta descansar</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha6() {
+    var html = `
+        <div class="container">
+            <p>Você sai correndo para fora de casa, desesperada. Você vê algo nas sombras, mas não consegue distinguir o que é...</p>
+            <img src="varanda.webp" alt="varanda">
+            <button onclick="escolha12()">Aproxima-se para investigar</button>
+            <button onclick="escolha13()">Corre de volta para dentro de casa, trancando a porta</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha7() {
+    var html = `
+        <div class="container">
+            <p>Você tenta manter a calma, mas o peso da situação é demais. O telefone toca novamente...</p>
+            <img src="telefone.gif" alt="telefone">
+            <button onclick="escolha10()">Atende o telefone novamente</button>
+            <button onclick="escolha11()">Desliga o telefone e tenta descansar</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha8() {
+    var html = `
+        <div class="container">
+            <p>Você se aproxima e, de repente, uma sombra misteriosa aparece diante de você!</p>
+            <p>Você não consegue escapar e algo terrível acontece...</p>
+            <img src="sombra.webp" alt="sombra">
+            <button onclick="finalRuim()">Fim trágico</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha9() {
+    var html = `
+        <div class="container">
+            <p>Você corre de volta para dentro, trancando a porta. Mas logo percebe que algo está observando você pela janela!</p>
+            <img src="vulto.webp" alt="vulto">
+            <button onclick="finalRuim()">Fim trágico</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha10() {
+    var html = `
+        <div class="container">
+            <p>Você decide enfrentar o que está do lado de fora, mas logo percebe que não está sozinho...</p>
+            <img src="vulto.webp" alt="vulto">
+            <button onclick="finalMistério()">Descobre a verdade</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha11() {
+    var html = `
+        <div class="container">
+            <p>Você desliga as luzes e se esconde. Tudo fica silencioso, mas de repente, você ouve passos se aproximando...</p>
+            <img src="cama.webp" alt="cama">
+            <button onclick="finalRuim()">Fim trágico</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha12() {
+    var html = `
+        <div class="container">
+            <p>Você encontra algo estranho na floresta...</p>
+            <img src="floresta.webp" alt="Floresta">
+            <button onclick="finalBom()">Sobrevivente</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function escolha13() {
+    var html = `
+        <div class="container">
+            <p>Você volta para casa, mas algo estranho acontece...</p>
+            <img src="casa_assombrada.webp" alt="Casa Assombrada">
+            <button onclick="finalMistério()">Mistério revelado</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function finalBom() {
+    var html = `
+        <div class="container">
+            <p>A ameaça desaparece, e você escapa com vida!</p>
+            <img src="luz.webp" alt="Luz">
+            <p><strong>Final Bom: Sobrevivente!</strong></p>
+            <button onclick="recomeco()">Recomeçar</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function finalRuim() {
+    var html = `
+        <div class="container">
+            <p>Você foi capturado. Tudo escurece...</p>
+            <img src="sombra_final.webp" alt="Sombra final">
+            <p><strong>Final Ruim: Fim trágico.</strong></p>
+            <button onclick="recomeco()">Recomeçar</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function finalMistério() {
+    var html = `
+        <div class="container">
+            <p>A sombra era um espírito perdido. Você o liberta e sobrevive!</p>
+            <img src="espirito_luz.webp" alt="Espírito">
+            <p><strong>Final Mistério: Revelação!</strong></p>
+            <button onclick="recomeco()">Recomeçar</button>
+        </div>
+    `;
+    adicionarEscolha(html);
+}
+
+function recomeco() {
+    location.reload();
+}
+</script>
+
+</body>
+</html>
